@@ -6,17 +6,29 @@
 // router.use('/feedback', feedbackRouter);
 const router = require('express').Router();
 const mysql = require('mysql2');
+const url = require('url');
 require('dotenv').config();
 
-const db = mysql.createConnection(
-  {
+let dbConfig;
+if (process.env.JAWSDB_MARIA_URL) {
+  const connectionUrl = new url.URL(process.env.JAWSDB_MARIA_URL);
+  
+  dbConfig = {
+    host: connectionUrl.hostname,
+    user: connectionUrl.username,
+    password: connectionUrl.password,
+    database: connectionUrl.pathname
+  };
+} else {
+  dbConfig = {
     host: 'localhost',
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: 'ucd_comp_db'
-  },
-  console.log(`Connected to database.`)
-).promise();
+    user: 'yourLocalUsername',
+    password: 'yourLocalPassword',
+    database: 'yourLocalDBName',
+  };
+}
+const db = mysql.createConnection(dbConfig).promise();
+
 
 router.get('/by_name', async (req, res) => {
     console.info(`${req.method} request at ${req.url}`);
