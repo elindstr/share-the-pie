@@ -2,7 +2,9 @@
 
 ## Description
 
-This is a node.js fullstack web server that connects a front-end search page to a backend sql database of UC Davis employee compensation.
+This is a node.js fullstack web server that connects a front-end search page to a back-end sql database of UC Davis employee compensation.
+
+The front-end is still in proof-of-concept development.
 
 The project is deployed on heroku here: https://damp-lake-32167-d93e2ef863ec.herokuapp.com/
 
