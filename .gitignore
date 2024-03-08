@@ -13,6 +13,7 @@
 .env
 package-lock.json
 ~*
+db_ignore/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
