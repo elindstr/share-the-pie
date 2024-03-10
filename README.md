@@ -15,5 +15,6 @@ To run locally, follow these steps:
 1. Clone this directory. In the green 'code' tab, copy the url for this repository. Then from a terminal, in your desired file directory, enter: <code>git clone </code>
 2. Install [node.js](https://nodejs.org/) if you haven't already.
 3. Install this project's  node dependencies. In a terminal in your cloned directory, run <code>npm i</code>.
-4. Then you should be ready to run the server: <code>npm start</code>.
-5. Open a browser, and the server should be running at http://localhost:3001/.
+4. Import the sql dump file to your local mysql database: <code>mysql -u your_username -p ucd_comp_db < localdb.sql</code>
+5. Then you should be ready to run the node.js server: <code>npm start</code>.
+6. Open a browser, and the server should be running at http://localhost:3001/.
